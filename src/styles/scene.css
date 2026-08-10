@@ -21,16 +21,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: scene- ken 28s ease-in-out infinite alternate;
-  transform-origin: 55% 40%;
+  /* Gentle drift — keep radio + interior frame in view */
+  animation: scene-ken 32s ease-in-out infinite alternate;
+  transform-origin: 50% 45%;
 }
 
 @keyframes scene-ken {
   from {
-    transform: scale(1.04) translate3d(0, 0, 0);
+    transform: scale(1.02) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+    transform: scale(1.06) translate3d(-0.8%, 0.4%, 0);
   }
 }
 
@@ -135,6 +136,31 @@
   text-decoration: underline;
 }
 
+.scene__credit {
+  margin-left: auto;
+  max-width: min(22rem, 72vw);
+  text-align: right;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #e8eef4;
+  opacity: 0.82;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.scene__credit a {
+  color: #e8eef4;
+  text-decoration: underline;
+  text-decoration-color: rgba(232, 238, 244, 0.35);
+  text-underline-offset: 2px;
+  opacity: 1;
+}
+
+.scene__credit a:hover {
+  text-decoration-color: #e08a2e;
+  color: #f2e6c9;
+}
+
 .scene__center {
   position: absolute;
   inset: 0;
@@ -223,6 +249,16 @@
 }
 
 @media (max-width: 720px) {
+  .scene__header {
+    padding: 14px 16px;
+    align-items: flex-start;
+  }
+
+  .scene__credit {
+    font-size: 0.65rem;
+    max-width: min(16rem, 70vw);
+  }
+
   .chips {
     left: 24px;
     right: 24px;
