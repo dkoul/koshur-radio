@@ -18,7 +18,7 @@ export function renderScene(app: HTMLElement): SceneRefs {
   const root = document.createElement('div');
   root.className = 'scene';
   root.innerHTML = `
-    <img class="scene__image" src="${heroUrl}" alt="Illustration: a shikara on misty Dal Lake beneath snow-capped Kashmir mountains at dawn" />
+    <img class="scene__image" src="${heroUrl}" alt="View from a Kashmiri houseboat: vintage radio on a carved sill, noon chai, and snow mountains across the lake" />
     <div class="scene__mist" aria-hidden="true"></div>
     <div class="scene__grain" aria-hidden="true"></div>
     <div class="scene__vignette" aria-hidden="true"></div>

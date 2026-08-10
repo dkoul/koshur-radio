@@ -4,13 +4,14 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
+  /* Fallback while hero loads — warm interior + cool lake tones */
   background: linear-gradient(
     180deg,
-    #0b1620 0%,
-    #163048 32%,
-    #2a4a5e 58%,
-    #6a7d72 82%,
-    #c4a574 100%
+    #1a1410 0%,
+    #2a221c 28%,
+    #3d4f5c 55%,
+    #6a8a9a 78%,
+    #c9b89a 100%
   );
 }
 
@@ -75,10 +76,12 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* Stronger center wash so the wordmark reads over the bright window sky */
   background:
-    radial-gradient(120% 90% at 50% 40%, transparent 50%, rgba(7, 16, 24, 0.55) 100%),
-    linear-gradient(180deg, rgba(7, 16, 24, 0.45) 0%, transparent 26%),
-    linear-gradient(0deg, rgba(7, 16, 24, 0.62) 0%, transparent 34%);
+    radial-gradient(85% 70% at 50% 42%, rgba(7, 16, 24, 0.38) 0%, transparent 68%),
+    radial-gradient(120% 90% at 50% 40%, transparent 48%, rgba(7, 16, 24, 0.62) 100%),
+    linear-gradient(180deg, rgba(7, 16, 24, 0.5) 0%, transparent 28%),
+    linear-gradient(0deg, rgba(7, 16, 24, 0.72) 0%, transparent 38%);
 }
 
 .scene__header {
