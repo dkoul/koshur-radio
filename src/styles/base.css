@@ -1,0 +1,49 @@
+:root {
+  --bg: #071018;
+  --card-bg: rgba(232, 238, 244, 0.94);
+  --card-fg: #101820;
+  --card-fg-muted: #5a6a78;
+  --accent: #d4781f; /* saffron */
+  --accent-soft: #f0d4a8;
+  --mist: #7eb3c9;
+  --radius: 16px;
+  --font-ui: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  font-family: var(--font-ui);
+  color: var(--card-fg);
+  overflow: hidden;
+}
+
+#app {
+  height: 100dvh;
+  width: 100vw;
+  position: relative;
+}
+
+/* YouTube iframe must exist and be technically "visible" per YT ToS,
+   but we keep it tiny and out of the way. */
+#yt-mount {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0.01;
+  pointer-events: none;
+}
