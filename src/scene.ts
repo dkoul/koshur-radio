@@ -27,7 +27,12 @@ export function renderScene(app: HTMLElement): SceneRefs {
         <span class="scene__listeners-dot"></span>
         <span data-el="listeners-count">0</span>&nbsp;listening
       </span>
-      <nav class="scene__playlist-links" data-el="playlist-links"></nav>
+      <p class="scene__credit">
+        Inspired by
+        <a href="https://x.com/s4tr2" target="_blank" rel="noopener noreferrer">Shubham Bhatt</a>
+        and made by son gobbur —
+        <a href="https://www.instagram.com/dkoul/" target="_blank" rel="noopener noreferrer">Deepak Koul</a>
+      </p>
     </header>
     <div class="scene__center">
       <div class="scene__brand">
