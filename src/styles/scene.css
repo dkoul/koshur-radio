@@ -92,13 +92,17 @@
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px 24px;
   color: #e8eef4;
   z-index: 2;
 }
 
 .scene__listeners {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 7px;
@@ -137,9 +141,8 @@
 }
 
 .scene__credit {
-  margin-left: auto;
-  max-width: min(22rem, 72vw);
-  text-align: right;
+  max-width: min(36rem, 90vw);
+  text-align: center;
   font-size: 0.72rem;
   line-height: 1.45;
   letter-spacing: 0.02em;
@@ -251,12 +254,11 @@
 @media (max-width: 720px) {
   .scene__header {
     padding: 14px 16px;
-    align-items: flex-start;
   }
 
   .scene__credit {
     font-size: 0.65rem;
-    max-width: min(16rem, 70vw);
+    max-width: min(20rem, 92vw);
   }
 
   .chips {
