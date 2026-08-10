@@ -21,16 +21,17 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: scene- ken 28s ease-in-out infinite alternate;
-  transform-origin: 55% 40%;
+  /* Gentle drift — keep radio + interior frame in view */
+  animation: scene-ken 32s ease-in-out infinite alternate;
+  transform-origin: 50% 45%;
 }
 
 @keyframes scene-ken {
   from {
-    transform: scale(1.04) translate3d(0, 0, 0);
+    transform: scale(1.02) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.1) translate3d(-1.5%, 1%, 0);
+    transform: scale(1.06) translate3d(-0.8%, 0.4%, 0);
   }
 }
 
