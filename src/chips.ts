@@ -9,7 +9,7 @@ const MOOD_LABELS: Record<TrackMood, string> = {
   classic: 'Classic',
   folk: 'Folk',
   contemporary: 'Now',
-  film: 'Film',
+  leela: 'Leela',
 };
 
 export function renderChips(
