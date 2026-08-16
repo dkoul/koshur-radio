@@ -75,6 +75,24 @@ export class QueueController {
     return this.engineInitPromise;
   }
 
+  /** Pause if something is playing. No-op otherwise. */
+  async pausePlayback(): Promise<void> {
+    if (!this.playing) return;
+    try {
+      await this.ensureEngine();
+    } catch (err) {
+      console.error('[koshur-radio] YouTube API unavailable:', err);
+      return;
+    }
+    this.engine.pause();
+  }
+
+  /** Resume or start playback if currently paused/idle. */
+  async resumePlayback(): Promise<void> {
+    if (this.playing) return;
+    await this.togglePlay();
+  }
+
   async togglePlay(): Promise<void> {
     try {
       await this.ensureEngine();

@@ -8,7 +8,8 @@ import type { QueueController } from './player/queue';
 export function renderChips(
   chipsEl: HTMLElement,
   tracks: Track[],
-  queue: QueueController
+  queue: QueueController,
+  onFilter?: (mood: TrackMood | null) => void
 ): void {
   const moodsWithTracks = FILTER_CHIPS.filter((m) =>
     tracks.some((t) => t.mood === m)
@@ -32,6 +33,7 @@ export function renderChips(
         .querySelectorAll('button')
         .forEach((b) => b.setAttribute('aria-pressed', 'false'));
       btn.setAttribute('aria-pressed', 'true');
+      onFilter?.(opt.value);
     });
     chipsEl.appendChild(btn);
   }

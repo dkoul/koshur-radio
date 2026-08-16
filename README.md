@@ -20,6 +20,8 @@ npm run preview
 
 Hand-curated IDs live in `src/data/tracks.ts`. Filter chips: Mix / Classic / Folk / Watuk Puza / Leela.
 
-Watuk Puza pulls from [Watak Puja](https://www.youtube.com/watch?v=slNbQdBwdXk) (Posheen Razdan).
+Watuk Puza pulls from [Watak Puja](https://www.youtube.com/watch?v=slNbQdBwdXk) (Posheen Razdan) and swaps in a ritual hero image.
+
+The top-left corner shows how many people are on the site right now. The player listens for Kashmiri voice commands after microphone permission: **akh minute** pauses, **karew start** resumes.
 
 Leela pulls from the [Kashmiri Bhajans](https://www.youtube.com/playlist?list=PL9h-vwkXL7F28KRfrscN19O-SxPZz0rey) playlist (Bright Sky Productions).
