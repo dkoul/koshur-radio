@@ -5,9 +5,10 @@ import './styles/player.css';
 import { tracks } from './data/tracks';
 import { PlayerUI } from './player/ui';
 import { QueueController } from './player/queue';
-import { renderScene } from './scene';
+import { renderScene, setWatukHero } from './scene';
 import { renderChips } from './chips';
-import { mountCounter, NoopCounterProvider } from './counter';
+import { mountPresence } from './presence';
+import { mountVoiceCommands } from './voice';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
@@ -25,9 +26,12 @@ const ui = new PlayerUI(app, {
 
 queue = new QueueController(tracks, ui);
 
-renderChips(scene.chipsEl, tracks, queue);
+renderChips(scene.chipsEl, tracks, queue, (mood) => {
+  setWatukHero(scene.root, mood === 'watuk-puza');
+});
 
-void mountCounter(new NoopCounterProvider(), scene.listenersEl, scene.listenersCountEl);
+mountPresence(scene.listenersEl, scene.listenersCountEl);
+mountVoiceCommands(queue);
 
 declare global {
   interface Window {

@@ -26,6 +26,39 @@
   transform-origin: 50% 45%;
 }
 
+.scene__image--watuk {
+  opacity: 0;
+  transform-origin: 50% 50%;
+  transition: opacity 700ms ease;
+  animation-name: scene-ken-watuk;
+}
+
+.scene.is-watuk .scene__image--watuk {
+  opacity: 1;
+}
+
+@keyframes scene-ken-watuk {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.05) translate3d(0.4%, -0.3%, 0);
+  }
+}
+
+.scene.is-watuk .scene__mist {
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+}
+
+.scene.is-watuk .scene__vignette {
+  background:
+    radial-gradient(85% 70% at 50% 42%, rgba(20, 10, 4, 0.28) 0%, transparent 68%),
+    radial-gradient(120% 90% at 50% 40%, transparent 48%, rgba(12, 8, 4, 0.7) 100%),
+    linear-gradient(180deg, rgba(12, 8, 4, 0.45) 0%, transparent 28%),
+    linear-gradient(0deg, rgba(12, 8, 4, 0.72) 0%, transparent 38%);
+}
+
 @keyframes scene-ken {
   from {
     transform: scale(1.02) translate3d(0, 0, 0);
@@ -109,6 +142,7 @@
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   opacity: 0.9;
+  z-index: 3;
 }
 
 .scene__listeners[hidden] {
@@ -259,6 +293,13 @@
   .scene__credit {
     font-size: 0.65rem;
     max-width: min(20rem, 92vw);
+  }
+
+  .scene__listeners {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    transform: none;
   }
 
   .chips {
