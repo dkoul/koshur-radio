@@ -3,7 +3,29 @@
  * Static, hand-verified YouTube IDs. No live search, no API keys.
  */
 
-export type TrackMood = 'classic' | 'folk' | 'contemporary' | 'leela';
+export type TrackMood =
+  | 'classic'
+  | 'folk'
+  | 'contemporary'
+  | 'watuk-puza'
+  | 'leela';
+
+/** User-facing chip / tag labels. `contemporary` stays Mix-only (no chip). */
+export const MOOD_LABELS: Record<TrackMood, string> = {
+  classic: 'Classic',
+  folk: 'Folk',
+  contemporary: 'Now',
+  'watuk-puza': 'Watuk Puza',
+  leela: 'Leela',
+};
+
+/** Filter chips, in display order. Omits moods that only appear in Mix. */
+export const FILTER_CHIPS: TrackMood[] = [
+  'classic',
+  'folk',
+  'watuk-puza',
+  'leela',
+];
 
 export interface Track {
   /** Stable internal ID, kebab-case. */
@@ -24,8 +46,9 @@ export interface Track {
 const ytCover = (id: string): string => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
 /**
- * Starter set + Leela (Kashmiri Bhajans playlist, Bright Sky Productions).
- * Playlist: https://www.youtube.com/playlist?list=PL9h-vwkXL7F28KRfrscN19O-SxPZz0rey
+ * Starter set + Watuk Puza + Leela (Kashmiri Bhajans playlist).
+ * Watuk Puza: https://www.youtube.com/watch?v=slNbQdBwdXk
+ * Leela playlist: https://www.youtube.com/playlist?list=PL9h-vwkXL7F28KRfrscN19O-SxPZz0rey
  * oEmbed / innertube verified 2026-08-10. Unplayable IDs auto-skip at runtime.
  */
 export const tracks: Track[] = [
@@ -127,6 +150,17 @@ export const tracks: Track[] = [
     youtubeId: '6p8tPr9Sy_Q',
     cover: ytCover('6p8tPr9Sy_Q'),
     mood: 'folk',
+    verified: true,
+  },
+
+  // --- Watuk Puza ----------------------------------------------------------
+  {
+    id: 'watuk-puza',
+    title: 'Watuk Puza',
+    artist: 'Posheen Razdan',
+    youtubeId: 'slNbQdBwdXk',
+    cover: ytCover('slNbQdBwdXk'),
+    mood: 'watuk-puza',
     verified: true,
   },
 

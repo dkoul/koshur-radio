@@ -1,6 +1,6 @@
 # Track Shortlist — Koshur Radio
 
-## Mix / Classic / Folk / Now
+## Mix / Classic / Folk / Watuk Puza
 
 | Mood | Track | Artist | YouTube ID |
 |------|-------|--------|------------|
@@ -15,6 +15,15 @@
 | Contemporary | Cheerith | Alif | `JGut3hKF4Pg` |
 | Folk | Pooshi Matia Walo | Abid Bandpori | `WkHI3N-GdhY` |
 | Folk | Dilbaro Yuier Valo | Aabha Hanjura | `6p8tPr9Sy_Q` |
+
+## Watuk Puza
+
+Source: https://www.youtube.com/watch?v=slNbQdBwdXk  
+Artist: Posheen Razdan. oEmbed verified 2026-08-16.
+
+| Track | Artist | YouTube ID |
+|-------|--------|------------|
+| Watuk Puza | Posheen Razdan | `slNbQdBwdXk` |
 
 ## Leela — Kashmiri Bhajans
 

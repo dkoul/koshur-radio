@@ -3,7 +3,7 @@
  * renders track info + emits user intents via callbacks.
  */
 
-import type { Track } from '../data/tracks';
+import { FILTER_CHIPS, MOOD_LABELS, type Track } from '../data/tracks';
 
 export interface PlayerUICallbacks {
   onPlayPause?: () => void;
@@ -95,7 +95,9 @@ export class PlayerUI {
     this.coverEl.alt = `${track.title} cover art`;
     this.titleEl.textContent = track.title;
     this.artistEl.textContent = track.artist;
-    this.moodTagEl.textContent = track.mood;
+    const showMood = FILTER_CHIPS.includes(track.mood);
+    this.moodTagEl.textContent = showMood ? MOOD_LABELS[track.mood] : '';
+    this.moodTagEl.hidden = !showMood;
     this.setProgress(0, 0);
   }
 
