@@ -2,22 +2,15 @@
  * Mood filter chips — Mix is default; one chip per mood that has tracks.
  */
 
-import type { Track, TrackMood } from './data/tracks';
+import { FILTER_CHIPS, MOOD_LABELS, type Track, type TrackMood } from './data/tracks';
 import type { QueueController } from './player/queue';
-
-const MOOD_LABELS: Record<TrackMood, string> = {
-  classic: 'Classic',
-  folk: 'Folk',
-  contemporary: 'Now',
-  leela: 'Leela',
-};
 
 export function renderChips(
   chipsEl: HTMLElement,
   tracks: Track[],
   queue: QueueController
 ): void {
-  const moodsWithTracks = (Object.keys(MOOD_LABELS) as TrackMood[]).filter((m) =>
+  const moodsWithTracks = FILTER_CHIPS.filter((m) =>
     tracks.some((t) => t.mood === m)
   );
 
